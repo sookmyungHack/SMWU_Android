@@ -58,7 +58,7 @@ class SessionCallback(mContext : Context) : ISessionCallback {
                             mContext.startActivity(intent)
                             SharedPreferenceController.sharedPreferenceController.setToken(mContext, response.body().token!!)
                             SharedPreferenceController.sharedPreferenceController.setName(mContext, nickname)
-                            SharedPreferenceController.sharedPreferenceController.setToken(mContext, profileImagePath)
+                            SharedPreferenceController.sharedPreferenceController.setImg(mContext, profileImagePath)
                         }
                     }
                 })
