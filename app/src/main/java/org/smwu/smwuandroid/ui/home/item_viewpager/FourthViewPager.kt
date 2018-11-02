@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import kotlinx.android.synthetic.main.vpitem_home_fourth.*
+import kotlinx.android.synthetic.main.vpitem_home_fourth.view.*
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.network.ApplicationController
 import retrofit2.Call
@@ -29,7 +30,7 @@ class FourthViewPager : Fragment() { //서명
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-                    requestManager.load(response.body().recommandSign.sign_img).centerCrop().into(vp_img_fourth)
+                    requestManager.load(response.body().recommandSign.sign_img).centerCrop().into(v.vp_img_fourth)
                 }
             }
 

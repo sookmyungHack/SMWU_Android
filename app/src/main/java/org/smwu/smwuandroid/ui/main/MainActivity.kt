@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import org.smwu.smwuandroid.ui.category.CategoryFragment
+import org.smwu.smwuandroid.ui.community.CommunityActivity
+import org.smwu.smwuandroid.ui.mypage.MyPageFragment
 import smwu.com.smwuandroid.R
 import smwu.com.smwuandroid.ui.home.HomeFragment
 
@@ -27,14 +29,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 main_mypage_btn.isSelected = false
             }
             main_community_btn->{
-//                replaceFragment(HomeFragment())
+                replaceFragment(CommunityActivity())
                 main_home_btn.isSelected = false
                 main_category_btn.isSelected = false
                 main_community_btn.isSelected = true
                 main_mypage_btn.isSelected = false
             }
             main_mypage_btn->{
-//                replaceFragment(HomeFragment())
+                replaceFragment(MyPageFragment())
                 main_home_btn.isSelected = false
                 main_category_btn.isSelected = false
                 main_community_btn.isSelected = false

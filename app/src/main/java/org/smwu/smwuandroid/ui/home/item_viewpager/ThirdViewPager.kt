@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import kotlinx.android.synthetic.main.vpitem_home_third.*
+import kotlinx.android.synthetic.main.vpitem_home_third.view.*
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.network.ApplicationController
 import retrofit2.Call
@@ -29,7 +30,7 @@ class ThirdViewPager : Fragment() { //참여
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-                    requestManager.load(response.body().recommandParty.party_img).centerCrop().into(vp_img_third)
+                    requestManager.load(response.body().recommandParty.party_img).centerCrop().into(v.vp_img_third)
                 }
             }
 
