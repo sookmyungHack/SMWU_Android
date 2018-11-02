@@ -28,25 +28,25 @@
         <ImageView
             android:id="@+id/main_home_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/tabbar_home"/>
         <ImageView
             android:id="@+id/main_category_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/tabbar_category"/>
         <ImageView
             android:id="@+id/main_community_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/tabbar_community"/>
         <ImageView
             android:id="@+id/main_mypage_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/tabbar_mypage"/>
 
