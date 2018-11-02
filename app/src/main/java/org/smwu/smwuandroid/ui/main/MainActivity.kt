@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import org.smwu.smwuandroid.ui.category.CategoryFragment
 import smwu.com.smwuandroid.R
 import smwu.com.smwuandroid.ui.home.HomeFragment
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 main_mypage_btn.isSelected = false
             }
             main_category_btn->{
-//                replaceFragment(HomeFragment())
+                replaceFragment(CategoryFragment())
                 main_home_btn.isSelected = false
                 main_category_btn.isSelected = true
                 main_community_btn.isSelected = false

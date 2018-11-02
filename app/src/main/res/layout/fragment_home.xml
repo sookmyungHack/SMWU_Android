@@ -37,31 +37,25 @@
                 android:orientation="vertical"
                 >
 
-                <ImageView
-                    android:id="@+id/main_page_fragment_theme_iv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="38dp"
-                    android:layout_marginLeft="32dp"
-                    android:src="@color/colorPrimary" />
 
-                <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+                <android.support.v4.view.ViewPager
                     android:id="@+id/main_page_fragment_viewpager"
                     android:layout_width="match_parent"
                     android:layout_height="284dp"
-                    android:layout_below="@id/main_page_fragment_theme_iv"
-                    tools:listitem="@layout/fragment_main_page"
-                    android:layout_marginTop="19dp"
-                    />
-
-                <LinearLayout
-                    android:id="@+id/main_page_fragment_viewpager_count_dot_ll"
+                    ></android.support.v4.view.ViewPager>
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_below="@+id/main_page_fragment_viewpager"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="horizontal"></LinearLayout>
+                    android:layout_height="40dp">
+                    <com.pm10.library.CircleIndicator
+                        android:layout_centerInParent="true"
+                        android:id="@+id/main_page_fragment_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"/>
+                </RelativeLayout>
+
+
             </LinearLayout>
 
             <!--RecylcerView 단-->
