@@ -26,7 +26,7 @@ class SessionCallback(mContext : Context) : ISessionCallback {
     val networkService = ApplicationController.instance.networkService
     // 로그인에 실패
     override fun onSessionOpenFailed(exception: KakaoException?) {
-        Toast.makeText(mContext,"아예실패",Toast.LENGTH_SHORT).show()
+        //Toast.makeText(mContext,"아예실패",Toast.LENGTH_SHORT).show()
     }
 
     // 로그인에 성공
@@ -39,21 +39,26 @@ class SessionCallback(mContext : Context) : ISessionCallback {
             override fun onSuccess(result: UserProfile?) {
                 val nickname = result!!.nickname
                 val profileImagePath = result.profileImagePath
-                val UUID = result.uuid
+                val UUID = result.id
+
+                Log.d("nickname",nickname)
+                Log.d("profileImagePath",profileImagePath)
+                Log.d("UUID",UUID.toString())
 
 //                Toast.makeText(mContext,"ㅁㄴㅇㄹ호ㅓ",Toast.LENGTH_SHORT).show()
 
-                val postKaKaoLoginResponse = networkService.postLoginData(PostKaKaoLoginData(UUID,nickname,profileImagePath))
+                val postKaKaoLoginResponse = networkService.postLoginData(PostKaKaoLoginData(UUID.toString(),nickname,profileImagePath))
                 postKaKaoLoginResponse.enqueue(object : Callback<PostKaKaoLoginResponse>{
                     override fun onFailure(call: Call<PostKaKaoLoginResponse>?, t: Throwable?) {
-                        Toast.makeText(mContext,"실패",Toast.LENGTH_SHORT).show()
+                       // Toast.makeText(mContext,"실패",Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onResponse(call: Call<PostKaKaoLoginResponse>?, response: Response<PostKaKaoLoginResponse>?) {
                         if(response!!.isSuccessful){
-                            Toast.makeText(mContext,"성공",Toast.LENGTH_SHORT).show()
+                           // Toast.makeText(mContext,"성공",Toast.LENGTH_SHORT).show()
                             val intent = Intent(mContext,MainActivity::class.java)
                             mContext.startActivity(intent)
+
                         }
                     }
 
