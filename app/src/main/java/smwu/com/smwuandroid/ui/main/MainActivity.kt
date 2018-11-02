@@ -1,7 +1,8 @@
-package smwu.com.smwuandroid
+package smwu.com.smwuandroid.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import smwu.com.smwuandroid.R
 
 class MainActivity : AppCompatActivity() {
 
