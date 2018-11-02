@@ -45,8 +45,6 @@ class SessionCallback(mContext : Context) : ISessionCallback {
                 Log.d("profileImagePath",profileImagePath)
                 Log.d("UUID",UUID.toString())
 
-//                Toast.makeText(mContext,"ㅁㄴㅇㄹ호ㅓ",Toast.LENGTH_SHORT).show()
-
                 val postKaKaoLoginResponse = networkService.postLoginData(PostKaKaoLoginData(UUID.toString(),nickname,profileImagePath))
                 postKaKaoLoginResponse.enqueue(object : Callback<PostKaKaoLoginResponse>{
                     override fun onFailure(call: Call<PostKaKaoLoginResponse>?, t: Throwable?) {
@@ -58,11 +56,11 @@ class SessionCallback(mContext : Context) : ISessionCallback {
                            // Toast.makeText(mContext,"성공",Toast.LENGTH_SHORT).show()
                             val intent = Intent(mContext,MainActivity::class.java)
                             mContext.startActivity(intent)
-
+                            SharedPreferenceController.sharedPreferenceController.setToken(mContext, response.body().token!!)
+                            SharedPreferenceController.sharedPreferenceController.setName(mContext, nickname)
+                            SharedPreferenceController.sharedPreferenceController.setToken(mContext, profileImagePath)
                         }
                     }
-
-
                 })
 
             }
