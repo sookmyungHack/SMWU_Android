@@ -18,7 +18,6 @@
 
         <activity android:name="org.smwu.smwuandroid.ui.main.MainActivity">
 
-
         </activity>
         <activity android:name="org.smwu.smwuandroid.ui.login.LoginActivity">
 
@@ -28,7 +27,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.smwu.smwuandroid.ui.detail.DetailActivity"></activity>
+        <activity android:name="org.smwu.smwuandroid.ui.detail.DetailActivity" />
+        <activity android:name="org.smwu.smwuandroid.ui.splash.SplashActivity"></activity>
     </application>
 
 </manifest>

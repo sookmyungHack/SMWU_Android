@@ -15,30 +15,47 @@
             android:src="@drawable/titlebar_logo"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-
-    <android.support.v4.widget.NestedScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:nestedScrollingEnabled="false">
-        <LinearLayout
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+        android:layout_height="match_parent">
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:background="#f8f8f8"
-                android:gravity="center_vertical"
+            android:nestedScrollingEnabled="false">
+            <LinearLayout
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="카테고리명"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:background="#f8f8f8"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:text="카테고리명"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-        </LinearLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-    </android.support.v4.widget.NestedScrollView>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="15sp"
+            android:backgroundTint="#FF7473"
+            android:src="@drawable/floatingbtn_write"
+
+            />
+    </FrameLayout>
+
+
 
 
 </LinearLayout>
