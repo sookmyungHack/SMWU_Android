@@ -24,7 +24,6 @@ class FirstViewPager :Fragment() { //펀딩
         requestManager = Glide.with(this)
         getRecommandFund.enqueue(object :Callback<GetRecommandResponse>{
             override fun onFailure(call: Call<GetRecommandResponse>?, t: Throwable?) {
-
             }
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
@@ -33,7 +32,6 @@ class FirstViewPager :Fragment() { //펀딩
 
                 }
             }
-
         })
         return v
     }

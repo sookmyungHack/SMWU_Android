@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="209dp"
     android:layout_height="232dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginLeft="12dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_bottom_rect">
@@ -14,25 +15,22 @@
         android:id="@+id/proj_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/proj_img_iv"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_below="@+id/proj_img_iv"
         android:layout_marginStart="11dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/proj_cate_tv"
-        android:textSize="13sp"
+        android:textSize="14sp"
         android:textColor="#444444"
         android:fontFamily="@font/noto_b"
-        android:text="프로젝트 이름"/>
+        tools:text="프로젝트 이름"/>
     <TextView
         android:id="@+id/proj_cate_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_below="@+id/proj_img_iv"
         android:layout_marginStart="11dp"
-        app:layout_constraintTop_toBottomOf="@+id/proj_title_tv"
-        android:layout_marginTop="1dp"
-        android:textSize="10sp"
+        android:layout_marginTop="22dp"
+        android:textSize="13sp"
         android:textColor="#444444"
         android:fontFamily="@font/noto_r"
-        android:text="카테고리 이름"/>
-</android.support.constraint.ConstraintLayout>
+        tools:text="카테고리 이름"/>
+</RelativeLayout>

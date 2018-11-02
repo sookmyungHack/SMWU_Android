@@ -2,6 +2,7 @@ package org.smwu.smwuandroid.ui.detail
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import smwu.com.smwuandroid.R
 
 class DetailActivity : AppCompatActivity() {
 
