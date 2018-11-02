@@ -15,7 +15,9 @@
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+
         <activity android:name="org.smwu.smwuandroid.ui.main.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +28,7 @@
         <activity android:name="org.smwu.smwuandroid.ui.login.LoginActivity">
 
         </activity>
-
+        <activity android:name="org.smwu.smwuandroid.ui.detail.DetailActivity"></activity>
     </application>
 
 </manifest>
