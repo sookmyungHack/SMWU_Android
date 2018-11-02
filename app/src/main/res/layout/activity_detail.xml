@@ -386,14 +386,14 @@
             android:id="@+id/detail_share_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="20dp"
             android:layout_toEndOf="@+id/detail_like_btn"
             android:background="@drawable/project_bottombar_sharebtn"/>
         <ImageButton
             android:id="@+id/detail_join_btn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="20dp"
             android:layout_toEndOf="@+id/detail_share_btn"
             android:background="@drawable/project_bottombar_joinbtn"/>
     </RelativeLayout>

@@ -22,4 +22,8 @@ interface NetworkService {
     // 새로운 프로젝트
     @GET("/api/main/new")
     fun getMainNew():Call<GetMainNewResponse>
+
+    // 인기 프로젝트
+    @GET("/api/main/popular")
+    fun getMainPopular():Call<GetMainNewResponse>
 }

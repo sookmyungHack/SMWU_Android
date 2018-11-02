@@ -116,6 +116,7 @@
                         android:id="@+id/main_page_fragment_rv2"
                         android:layout_below="@+id/main_page_fragment_recycler2_tv1"
                         android:layout_marginTop="20dp"
+                        android:paddingRight="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="261dp">
                     </android.support.v7.widget.RecyclerView>
