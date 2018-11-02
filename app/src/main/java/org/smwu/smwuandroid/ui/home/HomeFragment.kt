@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.smwu.smwuandroid.model.get.GetMainNewResponse
 import org.smwu.smwuandroid.network.ApplicationController
+import org.smwu.smwuandroid.network.Proj
 import org.smwu.smwuandroid.ui.detail.DetailActivity
 import org.smwu.smwuandroid.ui.home.NewItemAdapter
 import org.smwu.smwuandroid.ui.home.item_viewpager.*
@@ -53,7 +54,8 @@ class HomeFragment : Fragment() {
                     var newItemAdapter = NewItemAdapter(response!!.body().data, context!!)
                     newItemAdapter.setOnItemClickListener(View.OnClickListener {
                         startActivity(Intent(context, DetailActivity::class.java))
-                        // 상세 페이지에 넘겨야하는 정보는 여기에
+                        Proj.category = response.body().data[main_page_fragment_rv1.getChildAdapterPosition(it)].category
+                        Proj.idx = response.body().data[main_page_fragment_rv1.getChildAdapterPosition(it)].index1
                     })
                     main_page_fragment_rv1.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     main_page_fragment_rv1.adapter = newItemAdapter
