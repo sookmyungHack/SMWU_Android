@@ -6,7 +6,7 @@ import org.smwu.smwuandroid.util.GlobalApplication
 
 class ApplicationController : GlobalApplication(){
     lateinit var networkService: NetworkService
-    private val baseUrl = "http://bghgu.kt:3000/api/"
+    private val baseUrl = "http://52.78.129.27:3003/"
 
     companion object {
         lateinit var instance : ApplicationController
