@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="org.smwu.smwuandroid.ui.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/home_main_frame"
         android:layout_width="match_parent"
-        android:layout_height="500dp"></FrameLayout>
-
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_tap">
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/main_tap"
@@ -20,30 +20,37 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:weightSum="4"
-        android:layout_height="60dp">
+        android:layout_height="52dp"
+        android:background="#ffffff"
+        android:gravity="bottom"
+        android:paddingBottom="2dp"
+        android:elevation="5dp">
         <ImageView
+            android:id="@+id/main_home_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tabbar_home"/>
         <ImageView
+            android:id="@+id/main_category_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tabbar_category"/>
         <ImageView
+            android:id="@+id/main_community_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tabbar_community"/>
         <ImageView
+            android:id="@+id/main_mypage_btn"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/tabbar_mypage"/>
 
     </LinearLayout>
 
-
-</LinearLayout>
+</RelativeLayout>
 
