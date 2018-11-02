@@ -380,7 +380,7 @@
             android:id="@+id/detail_like_btn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:background="@drawable/project_bottombar_like_inactive"/>
+            android:background="@drawable/bottombar_like"/>
 
         <ImageButton
             android:id="@+id/detail_share_btn"
