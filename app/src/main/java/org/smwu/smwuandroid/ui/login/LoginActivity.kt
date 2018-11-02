@@ -22,17 +22,18 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        if(SharedPreferenceController.sharedPreferenceController.getToken(this)!=""){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         getHashkey()
 
         kakao_login_btn.setOnClickListener {
-            if(SharedPreferenceController.sharedPreferenceController.getToken(this)!=""){
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }else {
-                val session = Session.getCurrentSession()
-                session.addCallback(SessionCallback(this))
-                session.open(AuthType.KAKAO_ACCOUNT, this)
-            }
+            val session = Session.getCurrentSession()
+            session.addCallback(SessionCallback(this))
+            session.open(AuthType.KAKAO_ACCOUNT, this)
         }
     }
 
