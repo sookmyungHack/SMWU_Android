@@ -1,4 +1,4 @@
-package smwu.com.smwuandroid.ui.main
+package org.smwu.smwuandroid.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
