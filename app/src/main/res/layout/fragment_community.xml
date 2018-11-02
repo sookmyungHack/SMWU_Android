@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <!--Top Bar-->
+    <RelativeLayout
+        android:id="@+id/main_page_fragment_top_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/titlebar_logo"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/community_pic"/></ScrollView>
+
+
+</LinearLayout>

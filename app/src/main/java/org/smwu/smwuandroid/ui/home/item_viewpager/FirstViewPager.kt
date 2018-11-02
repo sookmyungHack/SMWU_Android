@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import kotlinx.android.synthetic.main.vpitem_home_first.*
+import kotlinx.android.synthetic.main.vpitem_home_first.view.*
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.network.ApplicationController
 import retrofit2.Call
@@ -28,7 +29,7 @@ class FirstViewPager :Fragment() { //펀딩
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-                    requestManager.load(response.body().recommandFund.finance_img).centerCrop().into(vp_img_first)
+                    requestManager.load(response.body().recommandFund.finance_img).centerCrop().into(v.vp_img_first)
 
                 }
             }
