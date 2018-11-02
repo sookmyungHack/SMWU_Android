@@ -11,9 +11,15 @@ import smwu.com.smwuandroid.R
 
 
 class NewItemAdapter (private var projectItem : ArrayList<GetProjectItem>, val context : Context) : RecyclerView.Adapter<NewItemViewholder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewItemViewholder {
+    private lateinit var onItemClick : View.OnClickListener
 
+    fun setOnItemClickListener(l : View.OnClickListener){ //3. 외부에서 넘어온 클릭리스너 설정
+        onItemClick = l
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewItemViewholder {
         val mainView : View = LayoutInflater.from(parent.context).inflate(R.layout.item_project,parent,false)
+        mainView.setOnClickListener(onItemClick)
         return  NewItemViewholder(mainView)
     }
 

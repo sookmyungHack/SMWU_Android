@@ -10,12 +10,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.RequestManager
 import com.pm10.library.CircleIndicator
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.smwu.smwuandroid.model.get.GetMainNewResponse
 import org.smwu.smwuandroid.network.ApplicationController
+import org.smwu.smwuandroid.ui.detail.DetailActivity
 import org.smwu.smwuandroid.ui.home.NewItemAdapter
 import org.smwu.smwuandroid.ui.home.item_viewpager.*
 import retrofit2.Call
@@ -51,19 +51,12 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<GetMainNewResponse>?, response: Response<GetMainNewResponse>?) {
                 if(response!!.isSuccessful){
                     var newItemAdapter = NewItemAdapter(response!!.body().data, context!!)
+                    newItemAdapter.setOnItemClickListener(View.OnClickListener {
+                        startActivity(Intent(context, DetailActivity::class.java))
+                        // 상세 페이지에 넘겨야하는 정보는 여기에
+                    })
                     main_page_fragment_rv1.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     main_page_fragment_rv1.adapter = newItemAdapter
-
-
-
-//                    val stampImgs :ArrayList<Int> = arrayListOf(
-//                            R.drawable.stamp_doldamgil_big,
-//                    )
-//                    for(i in 0..19){
-//                        if(response.body().data.place[i].stamp_status==1)
-//                            stampItem[i]= StampItem(stampImgs[i])
-//                    }
-//                    stamp_recycler.adapter = stampAdapter
                 }
             }
         })
