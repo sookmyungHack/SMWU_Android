@@ -3,14 +3,57 @@ package smwu.com.smwuandroid.ui.home
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentStatePagerAdapter
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.pm10.library.CircleIndicator
+import kotlinx.android.synthetic.main.fragment_home.view.*
+import org.smwu.smwuandroid.ui.home.item_viewpager.*
 import smwu.com.smwuandroid.R
 
 class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_home, container, false)
+        val viewPager : ViewPager = v.main_page_fragment_viewpager
+        val indicator : CircleIndicator = v.main_page_fragment_indicator
+
+
+        viewPager.adapter = PagerAdapter(fragmentManager)
+        viewPager.pageMargin = 60
+        viewPager.pageMargin = 2
+
+        indicator.setupWithViewPager(viewPager)
         return v
     }
+    class PagerAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
+        override fun getItem(position: Int): Fragment? {
+            when(position){
+                0->{
+                    return FirstViewPager()
+                }
+                1->{
+                    return SecondViewPager()
+                }
+                2->{
+                    return ThirdViewPager()
+                }
+                3->{
+                    return FourthViewPager()
+                }
+                4->{
+                    return FifthViewPager()
+                }
+
+            }
+            return null
+        }
+
+        override fun getCount(): Int {
+            return 5
+        }
+    }
+
 }
