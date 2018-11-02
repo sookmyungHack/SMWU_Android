@@ -7,9 +7,8 @@
     <application
         android:name="org.smwu.smwuandroid.network.ApplicationController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_r"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
@@ -21,14 +20,16 @@
         </activity>
         <activity android:name="org.smwu.smwuandroid.ui.login.LoginActivity">
 
+
+        </activity>
+        <activity android:name="org.smwu.smwuandroid.ui.detail.DetailActivity" />
+        <activity android:name="org.smwu.smwuandroid.ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.smwu.smwuandroid.ui.detail.DetailActivity" />
-        <activity android:name="org.smwu.smwuandroid.ui.splash.SplashActivity"></activity>
     </application>
 
 </manifest>

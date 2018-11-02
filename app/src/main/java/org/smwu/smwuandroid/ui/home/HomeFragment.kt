@@ -60,6 +60,24 @@ class HomeFragment : Fragment() {
                 }
             }
         })
+
+        val getMainPopularResponse = networkService.getMainPopular()
+        getMainPopularResponse.enqueue(object : Callback<GetMainNewResponse> {
+            override fun onFailure(call: Call<GetMainNewResponse>?, t: Throwable?) {
+            }
+
+            override fun onResponse(call: Call<GetMainNewResponse>?, response: Response<GetMainNewResponse>?) {
+                if(response!!.isSuccessful){
+                    var newItemAdapter = NewItemAdapter(response?.body().data, context!!)
+                    newItemAdapter.setOnItemClickListener(View.OnClickListener {
+                        startActivity(Intent(context, DetailActivity::class.java))
+                        // 상세 페이지에 넘겨야하는 정보는 여기에
+                    })
+                    main_page_fragment_rv2.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                    main_page_fragment_rv2.adapter = newItemAdapter
+                }
+            }
+        })
     }
 
     class PagerAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {

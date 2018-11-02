@@ -13,6 +13,7 @@ import com.bumptech.glide.RequestManager
 import kotlinx.android.synthetic.main.fragment_mypage.*
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
 import org.smwu.smwuandroid.ui.login.LoginActivity
+import org.smwu.smwuandroid.ui.service_dialog.ServiceDialog
 import org.smwu.smwuandroid.util.SharedPreferenceController
 import smwu.com.smwuandroid.R
 
@@ -29,6 +30,12 @@ class MyPageFragment : Fragment() {
             SharedPreferenceController.sharedPreferenceController.setToken(requireContext(),"")
             val intent = Intent(requireContext(),LoginActivity::class.java)
             requireContext().startActivity(intent)
+        }
+
+        v.btn_camera_profilechange.setOnClickListener {
+            var dialog_service = ServiceDialog(requireContext())
+            dialog_service.show()
+
         }
 
         //프로필바꾸기 아직 안함

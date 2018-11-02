@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ffffff"
     android:fitsSystemWindows="true">
 
@@ -52,6 +53,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        app:p_defaultColor="#d8d8d8"
+                        app:p_selectedColor="#FF7473"
+                        app:p_strokeColor="#ffffff"
                         android:layout_gravity="center"/>
                 </RelativeLayout>
 
@@ -116,6 +120,7 @@
                         android:id="@+id/main_page_fragment_rv2"
                         android:layout_below="@+id/main_page_fragment_recycler2_tv1"
                         android:layout_marginTop="20dp"
+                        android:paddingRight="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="261dp">
                     </android.support.v7.widget.RecyclerView>

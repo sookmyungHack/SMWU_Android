@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
     <!--Top Bar-->
     <RelativeLayout
         android:id="@+id/main_page_fragment_top_bar_rl"
@@ -42,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/btn_camera_profilechange"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/noto_m"
             android:text="닉네임"
             android:textColor="#444444"
@@ -54,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/nickname_mypage"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/mypage_logout" />
 
     </RelativeLayout>
