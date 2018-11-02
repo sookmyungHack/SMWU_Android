@@ -1,9 +1,9 @@
 package org.smwu.smwuandroid.model.get
 
 data class GetRecommandResponse (
-        var fund : GetRecommandFund,
-        var boycott : GetRecommandBoycott,
-        var party : GetReconmmandParty,
-        var sign : GetRecommandSign,
-        var donate : GetRecommandDonate
+        var recommandFund : GetRecommandFund,
+        var recommandBoycott : GetRecommandBoycott,
+        var recommandParty : GetReconmmandParty,
+        var recommandSign : GetRecommandSign,
+        var recommandDonate : GetRecommandDonate
         )

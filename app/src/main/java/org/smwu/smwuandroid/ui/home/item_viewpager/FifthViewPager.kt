@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
+import kotlinx.android.synthetic.main.vpitem_home_fifth.*
 import org.smwu.smwuandroid.model.get.GetRecommandDonate
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.network.ApplicationController
@@ -15,9 +18,10 @@ import javax.security.auth.callback.Callback
 
 class FifthViewPager : Fragment() { //기부
     val networkService = ApplicationController.instance.networkService
+    lateinit var requestManager: RequestManager
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.vpitem_home_fifth,container,false)
-
+        requestManager = Glide.with(this)
         val getRecommandDonate = networkService.getRecommandList()
         getRecommandDonate.enqueue(object:retrofit2.Callback<GetRecommandResponse>{
             override fun onFailure(call: Call<GetRecommandResponse>?, t: Throwable?) {
@@ -25,7 +29,7 @@ class FifthViewPager : Fragment() { //기부
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-
+                    requestManager.load(response.body().recommandFund.finance_img).centerCrop().into(vp_img_fifth)
                 }
             }
 

@@ -5,6 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.RequestManager
+import kotlinx.android.synthetic.main.vpitem_home_fourth.*
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.network.ApplicationController
 import retrofit2.Call
@@ -14,8 +17,10 @@ import smwu.com.smwuandroid.R
 
 class FourthViewPager : Fragment() { //서명
     val networkService = ApplicationController.instance.networkService
+    lateinit var requestManager: RequestManager
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.vpitem_home_fourth,container,false)
+        requestManager = Glide.with(this)
         val getRecommandSign = networkService.getRecommandList()
         getRecommandSign.enqueue(object : Callback<GetRecommandResponse>{
             override fun onFailure(call: Call<GetRecommandResponse>?, t: Throwable?) {
@@ -24,7 +29,7 @@ class FourthViewPager : Fragment() { //서명
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-
+                    requestManager.load(response.body().recommandSign.sign_img).centerCrop().into(vp_img_fourth)
                 }
             }
 
