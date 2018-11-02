@@ -68,7 +68,9 @@ class HomeFragment : Fragment() {
 
             override fun onResponse(call: Call<GetMainNewResponse>?, response: Response<GetMainNewResponse>?) {
                 if(response!!.isSuccessful){
+
                     var newItemAdapter = NewItemAdapter(response?.body().data, context!!)
+r
                     newItemAdapter.setOnItemClickListener(View.OnClickListener {
                         startActivity(Intent(context, DetailActivity::class.java))
                         // 상세 페이지에 넘겨야하는 정보는 여기에
