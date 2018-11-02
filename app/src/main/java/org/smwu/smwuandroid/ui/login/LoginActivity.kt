@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.smwu.smwuandroid.ui.main.MainActivity
 import smwu.com.smwuandroid.R
 import org.smwu.smwuandroid.util.SessionCallback
+import org.smwu.smwuandroid.util.SharedPreferenceController
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
@@ -24,18 +25,19 @@ class LoginActivity : AppCompatActivity() {
         getHashkey()
 
         kakao_login_btn.setOnClickListener {
-            val session = Session.getCurrentSession()
-            session.addCallback(SessionCallback(this))
-            session.open(AuthType.KAKAO_ACCOUNT,this)
-//            val intent = Intent(applicationContext, MainActivity::class.java)
-//            startActivity(intent)
+            if(SharedPreferenceController.sharedPreferenceController.getToken(this)!=""){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }else {
+                val session = Session.getCurrentSession()
+                session.addCallback(SessionCallback(this))
+                session.open(AuthType.KAKAO_ACCOUNT, this)
+            }
         }
     }
 
     fun getHashkey(){
-
         try{
-
             val info = getPackageManager().getPackageInfo("org.smwu.smwuandroid", PackageManager.GET_SIGNATURES)
 
             for(signature in info.signatures){
@@ -49,7 +51,5 @@ class LoginActivity : AppCompatActivity() {
         } catch (e:NoSuchAlgorithmException){
             e.printStackTrace()
         }
-
     }
-
 }
