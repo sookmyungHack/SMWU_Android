@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SMWUandroid</string>
+    <string name="kakao_app_key"> c1c3219c150717ed2be0b492f0143fe5</string><!--네이티브 앱키-->
 </resources>

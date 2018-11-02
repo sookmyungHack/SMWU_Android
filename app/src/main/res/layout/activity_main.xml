@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:fitsSystemWindows="true"
-    tools:context=".ui.main.MainActivity">
+    android:orientation="vertical"
+    tools:context="org.smwu.smwuandroid.ui.main.MainActivity">
 
-    <k_spot.jnm.k_spot.viewpager.MainViewPager
-        android:id="@+id/main_fragment_pager"
+    <FrameLayout
+        android:id="@+id/home_main_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="450dp"></FrameLayout>
 
-    </k_spot.jnm.k_spot.viewpager.MainViewPager>
 
-    <android.support.design.widget.TabLayout
-        android:background="@color/colorPrimary"
-        android:id="@+id/main_bottom_tab_layout"
-        android:elevation="6dp"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+    <LinearLayout
+        android:id="@+id/main_tap"
         android:layout_alignParentBottom="true"
-        app:tabIndicatorHeight="0dp">
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:weightSum="4"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
 
-    </android.support.design.widget.TabLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+
+</LinearLayout>
+
