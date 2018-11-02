@@ -1,20 +1,32 @@
 package org.smwu.smwuandroid.util
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
+import android.widget.Toast
 import com.kakao.auth.ISessionCallback
 import com.kakao.network.ErrorResult
 import com.kakao.usermgmt.UserManagement
 import com.kakao.usermgmt.callback.MeResponseCallback
 import com.kakao.usermgmt.response.model.UserProfile
 import com.kakao.util.exception.KakaoException
+import okhttp3.MediaType
+import okhttp3.Request
+import okhttp3.RequestBody
+import org.smwu.smwuandroid.model.post.PostKaKaoLoginData
+import org.smwu.smwuandroid.model.post.PostKaKaoLoginResponse
 import org.smwu.smwuandroid.network.ApplicationController
+import org.smwu.smwuandroid.ui.main.MainActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SessionCallback(mContext : Context) : ISessionCallback {
     var mContext: Context = mContext
     val networkService = ApplicationController.instance.networkService
     // 로그인에 실패
     override fun onSessionOpenFailed(exception: KakaoException?) {
+        Toast.makeText(mContext,"아예실패",Toast.LENGTH_SHORT).show()
     }
 
     // 로그인에 성공
@@ -29,28 +41,33 @@ class SessionCallback(mContext : Context) : ISessionCallback {
                 val profileImagePath = result.profileImagePath
                 val UUID = result.uuid
 
+//                Toast.makeText(mContext,"ㅁㄴㅇㄹ호ㅓ",Toast.LENGTH_SHORT).show()
 
-//                val postLoginResponse = networkService.postLogin(PostLoginData(UUID, nickname, profileImagePath))
-//                postLoginResponse.enqueue(object : Callback<PostLoginResponse>{
-//                    override fun onFailure(call: Call<PostLoginResponse>?, t: Throwable?) {
-//                    }
-//
-//                    override fun onResponse(call: Call<PostLoginResponse>?, response: Response<PostLoginResponse>?) {
-//                        if(response!!.isSuccessful) {
-//                            Token.token = response.body().token!!
-//                            mContext.startActivity(Intent(mContext, MainActivity::class.java))
-//                        }
-//                    }
-//
-//                })
+                val postKaKaoLoginResponse = networkService.postLoginData(PostKaKaoLoginData(UUID,nickname,profileImagePath))
+                postKaKaoLoginResponse.enqueue(object : Callback<PostKaKaoLoginResponse>{
+                    override fun onFailure(call: Call<PostKaKaoLoginResponse>?, t: Throwable?) {
+                        Toast.makeText(mContext,"실패",Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onResponse(call: Call<PostKaKaoLoginResponse>?, response: Response<PostKaKaoLoginResponse>?) {
+                        if(response!!.isSuccessful){
+                            Toast.makeText(mContext,"성공",Toast.LENGTH_SHORT).show()
+                            val intent = Intent(mContext,MainActivity::class.java)
+                            mContext.startActivity(intent)
+                        }
+                    }
+
+
+                })
+
             }
 
             override fun onSessionClosed(errorResult: ErrorResult?) {
-                Log.e("SessionCallback :: ", "onSessionClosed : " + errorResult!!.errorMessage);
+                Log.e("SessionCallback :: ", "onSessionClosed : " + errorResult!!.errorMessage)
             }
 
             override fun onNotSignedUp() {
-                Log.e("SessionCallback :: ", "onNotSignedUp");
+                Log.e("SessionCallback :: ", "onNotSignedUp")
             }
         })
     }

@@ -26,9 +26,9 @@ class LoginActivity : AppCompatActivity() {
         kakao_login_btn.setOnClickListener {
             val session = Session.getCurrentSession()
             session.addCallback(SessionCallback(this))
-            session.open(AuthType.KAKAO_ACCOUNT, this)
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
+            session.open(AuthType.KAKAO_ACCOUNT,this)
+//            val intent = Intent(applicationContext, MainActivity::class.java)
+//            startActivity(intent)
         }
     }
 
@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
         try{
 
-            val info = getPackageManager().getPackageInfo("smwu.com.smwuandroid", PackageManager.GET_SIGNATURES)
+            val info = getPackageManager().getPackageInfo("org.smwu.smwuandroid", PackageManager.GET_SIGNATURES)
 
             for(signature in info.signatures){
                 val md = MessageDigest.getInstance("SHA")
