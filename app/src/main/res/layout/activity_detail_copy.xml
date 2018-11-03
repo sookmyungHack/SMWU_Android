@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".ui.detail.DetailActivity">
+    <!-- inner -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/project_pic">
+        </LinearLayout>
+    </ScrollView>
+    <!-- bottombar -->
+    <View
+        android:id="@+id/detail_line_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1e000000"
+        android:layout_above="@+id/detail_bottombar_relative"/>
+    <RelativeLayout
+        android:id="@+id/detail_bottombar_relative"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:background="#ccfafafa"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+        <ImageButton
+            android:id="@+id/detail_like_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bottombar_like"/>
+
+        <ImageButton
+            android:id="@+id/detail_share_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/detail_like_btn"
+            android:background="@drawable/project_bottombar_sharebtn"/>
+        <ImageButton
+            android:id="@+id/detail_join_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/detail_share_btn"
+            android:background="@drawable/project_bottombar_joinbtn"/>
+    </RelativeLayout>
+</RelativeLayout>
