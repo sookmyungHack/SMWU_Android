@@ -31,6 +31,8 @@ class FourthViewPager : Fragment() { //서명
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
                     requestManager.load(response.body().recommandSign.sign_img).centerCrop().into(v.vp_img_fourth)
+                    v.title_fourth.text = response.body().recommandSign.sign_title
+                    v.user_fourth.text = response.body().recommandSign.user_nickname
                 }
             }
 

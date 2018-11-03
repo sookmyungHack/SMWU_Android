@@ -32,6 +32,8 @@ class SecondViewPager : Fragment() { //보이콧
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
                     requestManager.load(response.body().recommandBoycott.boycott_img).centerCrop().into(v.vp_img_second)
+                    v.title_second.text = response.body().recommandBoycott.boycott_title
+                    v.user_second.text = response.body().recommandBoycott.user_nickname
 
                 }
             }
