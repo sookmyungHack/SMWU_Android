@@ -72,10 +72,11 @@ class HomeFragment : Fragment() {
                 if(response!!.isSuccessful){
 
                     var newItemAdapter = NewItemAdapter(response?.body().data, context!!)
-r
+
                     newItemAdapter.setOnItemClickListener(View.OnClickListener {
                         startActivity(Intent(context, DetailActivity::class.java))
-                        // 상세 페이지에 넘겨야하는 정보는 여기에
+                        Proj.category = response.body().data[main_page_fragment_rv2.getChildAdapterPosition(it)].category
+                        Proj.idx = response.body().data[main_page_fragment_rv2.getChildAdapterPosition(it)].index1
                     })
                     main_page_fragment_rv2.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                     main_page_fragment_rv2.adapter = newItemAdapter

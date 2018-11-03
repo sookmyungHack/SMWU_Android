@@ -14,29 +14,33 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <ImageView
                     android:id="@+id/detail_img_iv"
                     android:layout_width="match_parent"
                     android:layout_height="230dp"
-                    android:src="@color/colorPrimary"/>
+                    android:src="@color/colorPrimary" />
+
                 <TextView
                     android:id="@+id/detail_category_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/detail_img_iv"
                     android:layout_margin="15dp"
                     android:background="@drawable/background_category"
+                    android:fontFamily="@font/noto_m"
                     android:paddingBottom="3dp"
                     android:paddingLeft="12dp"
-                    android:paddingTop="3dp"
                     android:paddingRight="12dp"
-                    android:layout_below="@+id/detail_img_iv"
-                    android:textSize="12sp"
+                    android:paddingTop="3dp"
                     android:textColor="#767676"
-                    android:fontFamily="@font/noto_m"
-                    tools:text="카테고리"/>
+                    android:textSize="12sp"
+                    tools:text="카테고리" />
+
                 <TextView
                     android:id="@+id/detail_title_tv"
                     android:layout_width="wrap_content"
@@ -44,97 +48,107 @@
                     android:layout_below="@+id/detail_category_tv"
                     android:layout_marginStart="15dp"
                     android:fontFamily="@font/noto_b"
-                    android:textSize="21sp"
-                    android:textColor="#1a1a1a"
                     android:gravity="end"
-                    tools:text="타이틀이  들어갑니다"/>
+                    android:textColor="#1a1a1a"
+                    android:textSize="21sp"
+                    tools:text="타이틀이  들어갑니다" />
+
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/detail_profile_circle"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@color/colorPrimary"
+                    android:layout_below="@+id/detail_title_tv"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="7dp"
-                    android:layout_below="@+id/detail_title_tv"/>
+                    android:src="@color/colorPrimary" />
+
                 <TextView
                     android:id="@+id/detail_nickname_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/detail_title_tv"
                     android:layout_marginStart="6dp"
                     android:layout_marginTop="9dp"
-                    android:textSize="14sp"
-                    android:textColor="#444444"
-                    android:layout_below="@+id/detail_title_tv"
                     android:layout_toEndOf="@+id/detail_profile_circle"
-                    tools:text="닉네임"
-                    android:fontFamily="@font/noto_m"/>
+                    android:fontFamily="@font/noto_m"
+                    android:textColor="#444444"
+                    android:textSize="14sp"
+                    tools:text="닉네임" />
+
                 <ImageView
                     android:id="@+id/detail_share2_btn"
-                    android:layout_below="@+id/detail_nickname_tv"
-                    android:background="@drawable/project_share"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_width="40dp"
-                    android:layout_height="37dp" />
+                    android:layout_height="37dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/detail_nickname_tv"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/project_share" />
+
                 <ImageView
                     android:id="@+id/detail_like2_btn"
-                    android:layout_below="@+id/detail_nickname_tv"
-                    android:layout_toStartOf="@+id/detail_share2_btn"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_width="31dp"
                     android:layout_height="37dp"
-                    android:background="@drawable/icon_like"/>
+                    android:layout_below="@+id/detail_nickname_tv"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toStartOf="@+id/detail_share2_btn"
+                    android:background="@drawable/icon_like" />
+
                 <RelativeLayout
                     android:id="@+id/detail_info_relative"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_below="@+id/detail_like2_btn"
                     android:layout_marginTop="13dp"
-                    android:background="#f8f8f8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:background="#f8f8f8">
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_alignParentTop="true"
-                        android:background="#d5d5d5"/>
+                        android:background="#d5d5d5" />
+
                     <TextView
                         android:id="@+id/detail_infotitle_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="12dp"
-                        android:textSize="12sp"
-                        android:textColor="#444444"
                         android:fontFamily="@font/noto_b"
-                        android:text="프로젝트 간단 소개"/>
+                        android:text="프로젝트 간단 소개"
+                        android:textColor="#444444"
+                        android:textSize="12sp" />
+
                     <TextView
                         android:id="@+id/detail_info_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:textColor="#444444"
-                        android:layout_margin="15dp"
                         android:layout_below="@+id/detail_infotitle_tv"
-                        tools:text="프로젝트에 대한 간단한 설명이 나옵니다 간단하게 적어주시면 정말 감사하겠습니다."
-                        />
+                        android:layout_margin="15dp"
+                        android:textColor="#444444"
+                        android:textSize="12sp"
+                        tools:text="프로젝트에 대한 간단한 설명이 나옵니다 간단하게 적어주시면 정말 감사하겠습니다." />
                 </RelativeLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/detail_info_relative"
-                    android:background="#d5d5d5"/>
+                    android:background="#d5d5d5" />
+
                 <TextView
                     android:id="@+id/detail_remain_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_info_relative"
-                    android:layout_marginTop="21dp"
                     android:layout_marginLeft="18dp"
-                    android:textSize="12sp"
-                    android:textColor="#000000"
+                    android:layout_marginTop="21dp"
                     android:fontFamily="@font/noto_r"
-                    android:text="남은 기간"/>
+                    android:text="남은 기간"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/detail_remainnum_tv"
                     android:layout_width="wrap_content"
@@ -143,34 +157,35 @@
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/noto_b"
-                    android:textSize="16sp"
                     android:textColor="#444444"
-                    tools:text="30"
-                    />
+                    android:textSize="16sp"
+                    tools:text="30" />
+
                 <TextView
                     android:id="@+id/detail_remainday_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_remain_tv"
+                    android:layout_marginLeft="7dp"
                     android:layout_marginTop="9dp"
                     android:layout_toRightOf="@+id/detail_remainnum_tv"
-                    android:layout_marginLeft="7dp"
-                    android:textSize="14sp"
-                    android:textColor="#444444"
                     android:fontFamily="@font/noto_r"
                     android:text="일"
-                    />
+                    android:textColor="#444444"
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/detail_support_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_remainnum_tv"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="18dp"
-                    android:textSize="12sp"
-                    android:textColor="#000000"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/noto_r"
-                    android:text="서포터"/>
+                    android:text="서포터"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/detail_supportnum_tv"
                     android:layout_width="wrap_content"
@@ -179,34 +194,35 @@
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/noto_b"
-                    android:textSize="16sp"
                     android:textColor="#444444"
-                    tools:text="120"
-                    />
+                    android:textSize="16sp"
+                    tools:text="120" />
+
                 <TextView
                     android:id="@+id/detail_supportunit_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_support_tv"
+                    android:layout_marginLeft="7dp"
                     android:layout_marginTop="9dp"
                     android:layout_toRightOf="@+id/detail_supportnum_tv"
-                    android:layout_marginLeft="7dp"
-                    android:textSize="14sp"
-                    android:textColor="#444444"
                     android:fontFamily="@font/noto_r"
                     android:text="명 (12% 달성)"
-                    />
+                    android:textColor="#444444"
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/detail_gather_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_supportnum_tv"
-                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="18dp"
-                    android:textSize="12sp"
-                    android:textColor="#000000"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/noto_r"
-                    android:text="모인 금액"/>
+                    android:text="모인 금액"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
                 <TextView
                     android:id="@+id/detail_gathernum_tv"
                     android:layout_width="wrap_content"
@@ -215,54 +231,57 @@
                     android:layout_marginLeft="18dp"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/noto_b"
-                    android:textSize="16sp"
                     android:textColor="#444444"
-                    tools:text="3,412,500"
-                    />
+                    android:textSize="16sp"
+                    tools:text="3,412,500" />
+
                 <TextView
                     android:id="@+id/detail_gatherunit_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_gather_tv"
+                    android:layout_marginLeft="7dp"
                     android:layout_marginTop="9dp"
                     android:layout_toRightOf="@+id/detail_gathernum_tv"
-                    android:layout_marginLeft="7dp"
-                    android:textSize="14sp"
-                    android:textColor="#444444"
                     android:fontFamily="@font/noto_r"
                     android:text="원"
-                    />
+                    android:textColor="#444444"
+                    android:textSize="14sp" />
+
                 <RelativeLayout
                     android:id="@+id/detail_goal_relative"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/detail_gather_tv"
-                    android:layout_marginTop="78dp"
-                    android:paddingLeft="14dp"
-                    android:paddingTop="12dp"
-                    android:paddingRight="14dp"
-                    android:paddingBottom="13dp"
-                    android:layout_marginRight="9dp"
                     android:layout_marginLeft="9dp"
-                    android:background="@drawable/background_gray">
+                    android:layout_marginRight="9dp"
+                    android:layout_marginTop="78dp"
+                    android:background="@drawable/background_gray"
+                    android:paddingBottom="13dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="12dp">
+
                     <TextView
                         android:id="@+id/detail_goaltitle_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/noto_m"
-                        android:textSize="12sp"
+                        android:text="목표 인원"
                         android:textColor="#444444"
-                        android:text="목표 인원"/>
+                        android:textSize="12sp" />
+
                     <TextView
                         android:id="@+id/detail_goal_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/detail_goaltitle_tv"
                         android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/detail_goaltitle_tv"
                         android:fontFamily="@font/noto_r"
-                        android:textSize="12sp"
                         android:textColor="#444444"
-                        tools:text="1000명"/>
+                        android:textSize="12sp"
+                        tools:text="1000명" />
+
                     <TextView
                         android:id="@+id/detail_datetitle_tv"
                         android:layout_width="wrap_content"
@@ -270,95 +289,96 @@
                         android:layout_below="@id/detail_goaltitle_tv"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/noto_m"
-                        android:textSize="12sp"
+                        android:text="기간"
                         android:textColor="#444444"
-                        android:text="기간"/>
+                        android:textSize="12sp" />
+
                     <TextView
                         android:id="@+id/detail_date_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detail_goaltitle_tv"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:layout_toRightOf="@+id/detail_goaltitle_tv"
-                        android:layout_marginLeft="10dp"
                         android:fontFamily="@font/noto_r"
-                        android:textSize="12sp"
                         android:textColor="#444444"
-                        tools:text="2018년 11월 1일 - 2018년 11월 10일"/>
+                        android:textSize="12sp"
+                        tools:text="2018년 11월 1일 - 2018년 11월 10일" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/detail_datetitle_tv"
                         android:layout_marginTop="15dp"
-                        android:textSize="12sp"
-                        android:textColor="#070707"
                         android:fontFamily="@font/noto_m"
                         android:text="해당 프로젝트는 100%를 달성하여야 성공합니다"
-                        />
+                        android:textColor="#070707"
+                        android:textSize="12sp" />
                 </RelativeLayout>
+
                 <TextView
                     android:id="@+id/detail_comm1_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_goal_relative"
-                    android:layout_marginTop="51dp"
                     android:layout_centerHorizontal="true"
-                    android:textSize="33sp"
-                    android:textColor="#bdbdbd"
+                    android:layout_marginTop="51dp"
                     android:fontFamily="@font/noto_m"
                     android:text="“"
-                    />
+                    android:textColor="#bdbdbd"
+                    android:textSize="33sp" />
+
                 <TextView
                     android:id="@+id/detail_slogan_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_comm1_tv"
-                    android:layout_marginTop="-20dp"
                     android:layout_centerHorizontal="true"
-                    android:textSize="21sp"
-                    android:textColor="#1a1a1a"
-                    android:gravity="center"
+                    android:layout_marginTop="-20dp"
                     android:fontFamily="@font/noto_b"
+                    android:gravity="center"
+                    android:textColor="#1a1a1a"
+                    android:textSize="21sp"
                     tools:text="적고  싶은 슬로건을 여기에다가
-적어주세요"
-                    />
+적어주세요" />
+
                 <TextView
                     android:id="@+id/detail_comm2_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_slogan_tv"
                     android:layout_centerHorizontal="true"
-                    android:textSize="33sp"
-                    android:textColor="#bdbdbd"
                     android:fontFamily="@font/noto_m"
                     android:text="”"
-                    />
+                    android:textColor="#bdbdbd"
+                    android:textSize="33sp" />
+
                 <ImageView
                     android:id="@+id/detail_content_iv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/detail_comm2_tv"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
-                    android:layout_below="@+id/detail_comm2_tv"
-                    android:src="@drawable/ic_launcher_background"
-                    />
+                    android:src="@drawable/ic_launcher_background" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/detail_content_iv"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="12dp"
                     android:layout_marginBottom="80dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginTop="15dp"
                     android:fontFamily="@font/noto_r"
-                    android:textSize="12sp"
                     android:textColor="#444444"
+                    android:textSize="12sp"
                     tools:text="프로젝트에 대한 구구절절한 설명을 여기에다가 적을거예요
 여러분들의 프로젝트에 대한 소개를 열심히 열심히 해주세요
 무엇이든 상관이 없습니다.
 얄리얄랴셩 얄라리얄라 어쩌구저쩌구 쩌쩌구쩌쩌구 깔깔깔
-샤우트아워패션투게더 여러분 솝트하세요 얄라라라라라라라라라라"
-                    />
+샤우트아워패션투게더 여러분 솝트하세요 얄라라라라라라라라라라" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

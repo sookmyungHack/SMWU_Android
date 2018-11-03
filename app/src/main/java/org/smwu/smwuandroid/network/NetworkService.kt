@@ -1,18 +1,9 @@
 package org.smwu.smwuandroid.network
 
-import org.smwu.smwuandroid.model.get.GetCategoryListDataResponse
-import org.smwu.smwuandroid.model.get.GetMainNewResponse
-import org.smwu.smwuandroid.model.get.GetRecommandResponse
-import org.smwu.smwuandroid.model.post.PostKaKaoLoginData
-import org.smwu.smwuandroid.model.post.PostKaKaoLoginResponse
-import org.smwu.smwuandroid.model.post.PostProjData
-import org.smwu.smwuandroid.model.post.PostProjResponse
+import org.smwu.smwuandroid.model.get.*
+import org.smwu.smwuandroid.model.post.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface NetworkService {
 
@@ -45,4 +36,23 @@ interface NetworkService {
     @POST("/api/main/bookmark/cancel")
     fun postRemoveBookmark(@Header("token") token : String, @Body projData : PostProjData):Call<PostProjResponse>
 
+    // 상세보기 0 - 펀딩
+    @GET("/api/main/detail")
+    fun getDetail0(@Path("idx") idx : Int, @Path("category") cate : Int) : Call<GetDetailResponse0>
+
+    // 상세보기 1 - 행사
+    @GET("/api/main/detail")
+    fun getDetail1(@Path("idx") idx : Int, @Path("category") cate : Int) : Call<GetDetailResponse1>
+
+    // 상세보기 2 - 서명
+    @GET("/api/main/detail")
+    fun getDetail2(@Path("idx") idx : Int, @Path("category") cate : Int) : Call<GetDetailResponse2>
+
+    // 상세보기 3 - 보이콧
+    @GET("/api/main/detail")
+    fun getDetail3(@Path("idx") idx : Int, @Path("category") cate : Int) : Call<GetDetailResponse3>
+
+    // 상세보기 4 - 기부
+    @GET("/api/main/detail")
+    fun getDetail4(@Path("idx") idx : Int, @Path("category") cate : Int) : Call<GetDetailResponse4>
 }

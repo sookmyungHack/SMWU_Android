@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
+import org.smwu.smwuandroid.model.get.GetDetailResponse0
 import org.smwu.smwuandroid.model.post.PostProjData
 import org.smwu.smwuandroid.model.post.PostProjResponse
 import org.smwu.smwuandroid.network.ApplicationController
@@ -21,14 +23,42 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail)
+        setContentView(R.layout.activity_detail_copy)
+
+//        detail_title_tv.text = response.body().data.finance_title
+//        Glide.with(this@DetailActivity).load(response!!.body().data.user_img).into(detail_profile_circle)
+//        detail_nickname_tv.text = response.body().data.user_nickname
+//        detail_info_tv.text = response.body().data.finance_content
 
         when(Proj.category){
-            0 -> detail_category_tv.text = "펀딩"
-            1 -> detail_category_tv.text = "행사"
-            2 -> detail_category_tv.text = "서명"
-            3 -> detail_category_tv.text = "보이콧"
-            4 -> detail_category_tv.text = "기부"
+            0 -> {
+                detail_category_tv.text = "펀딩"
+//                val getDetailResponse0 = networkService.getDetail0(Proj.idx, Proj.category)
+//                getDetailResponse0.enqueue(object : Callback<GetDetailResponse0>{
+//                    override fun onFailure(call: Call<GetDetailResponse0>?, t: Throwable?) {
+//                    }
+//
+//                    override fun onResponse(call: Call<GetDetailResponse0>?, response: Response<GetDetailResponse0>?) {
+//                        Glide.with(this@DetailActivity).load(response!!.body().data.finance_img).into(detail_img_iv)
+//                        detail_title_tv.text = response.body().data.finance_title
+//                        Glide.with(this@DetailActivity).load(response!!.body().data.user_img).into(detail_profile_circle)
+//                        detail_nickname_tv.text = response.body().data.user_nickname
+//                        detail_info_tv.text = response.body().data.finance_content
+//                    }
+//                })
+            }
+            1 -> {
+                detail_category_tv.text = "행사"
+            }
+            2 -> {
+                detail_category_tv.text = "서명"
+            }
+            3 -> {
+                detail_category_tv.text = "보이콧"
+            }
+            4 -> {
+                detail_category_tv.text = "기부"
+            }
         }
         // 좋아요 아이콘 토글, 서버 통신
         detail_like_btn.setOnClickListener {
