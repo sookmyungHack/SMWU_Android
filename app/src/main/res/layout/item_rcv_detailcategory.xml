@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="111dp">
     <ImageView
+        android:id="@+id/img_detailcategory"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
         android:layout_width="112dp"
@@ -12,30 +13,38 @@
     <RelativeLayout
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:paddingLeft="12dp"
+        android:paddingLeft="20dp"
         android:paddingRight="15dp"
         android:layout_alignParentRight="true"
-        android:layout_width="233dp"
+        android:layout_width="210dp"
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/title_detailcategory"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
+                android:textSize="13sp"
+                android:fontFamily="@font/noto_b"
+                android:textColor="#444444"
                 android:text="제목이당제목이당제목이당gggggggggggggg"/>
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/nickname_detailcategory"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:fontFamily="@font/noto_r"
+                android:textColor="#444444"
                 android:text="닉네임"/>
         </LinearLayout>
         <RelativeLayout
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="20dp"
             android:orientation="vertical">
             <View
                 android:layout_width="match_parent"
@@ -45,15 +54,63 @@
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="50%달성"/>
-                <TextView
-                    android:gravity="right"
-                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/percent_detailcategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/noto_m"
+                        android:textColor="#000000"
+                        android:text="50"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/noto_m"
+                        android:textColor="#000000"
+                        android:text="%"/>
+                    <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="21일남음"/>
+                    android:textSize="10sp"
+                        android:fontFamily="@font/noto_r"
+                        android:textColor="#444444"
+                    android:text="달성"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/day_detailcategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/noto_m"
+                        android:textColor="#000000"
+
+                        android:text="20"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/noto_m"
+                        android:textColor="#000000"
+                        android:text="일"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/noto_r"
+                        android:textColor="#444444"
+                        android:text=" 남음"/>
+                </LinearLayout>
             </RelativeLayout>
 
         </RelativeLayout>

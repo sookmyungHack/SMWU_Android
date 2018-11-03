@@ -30,6 +30,8 @@ class FirstViewPager :Fragment() { //펀딩
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
                     requestManager.load(response.body().recommandFund.finance_img).centerCrop().into(v.vp_img_first)
+                    v.title_first.text = response.body().recommandFund.finance_title
+                    v.user_first.text = response.body().recommandFund.user_nickname
 
                 }
             }

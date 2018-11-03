@@ -30,7 +30,9 @@ class FifthViewPager : Fragment() { //기부
 
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
-                    requestManager.load(response.body().recommandFund.finance_img).centerCrop().into(v.vp_img_fifth)
+                    requestManager.load(response.body().recommandDonate.donate_img).centerCrop().into(v.vp_img_fifth)
+                    v.title_fifth.text = response.body().recommandDonate.donate_title
+                    v.user_fifth.text = response.body().recommandDonate.user_nickname
                 }
             }
 
