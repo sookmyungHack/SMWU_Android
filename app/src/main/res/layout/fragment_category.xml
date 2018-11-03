@@ -6,29 +6,34 @@
     android:weightSum="5"
     android:orientation="vertical">
     <ImageView
+        android:id="@+id/first_category"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/category_signature"/>
     <ImageView
+        android:id="@+id/second_category"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/category_funding"/>
 
     <ImageView
+        android:id="@+id/third_category"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/category_event"/>
 
     <ImageView
+        android:id="@+id/fourth_category"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/category_donation"/>
 
     <ImageView
+        android:id="@+id/fifth_category"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"

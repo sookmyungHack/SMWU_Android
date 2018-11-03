@@ -31,6 +31,8 @@ class ThirdViewPager : Fragment() { //참여
             override fun onResponse(call: Call<GetRecommandResponse>?, response: Response<GetRecommandResponse>?) {
                 if(response!!.isSuccessful){
                     requestManager.load(response.body().recommandParty.party_img).centerCrop().into(v.vp_img_third)
+                    v.title_third.text = response.body().recommandParty.party_title
+                    v.user_third.text = response.body().recommandParty.user_nickname
                 }
             }
 

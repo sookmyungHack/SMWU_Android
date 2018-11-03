@@ -1,5 +1,6 @@
 package org.smwu.smwuandroid.network
 
+import org.smwu.smwuandroid.model.get.GetCategoryListDataResponse
 import org.smwu.smwuandroid.model.get.GetMainNewResponse
 import org.smwu.smwuandroid.model.get.GetRecommandResponse
 import org.smwu.smwuandroid.model.post.PostKaKaoLoginData
@@ -11,6 +12,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface NetworkService {
 
@@ -30,6 +32,11 @@ interface NetworkService {
     @GET("/api/main/popular")
     fun getMainPopular():Call<GetMainNewResponse>
 
+
+    // 카테고리 리스트
+    @GET("/api/category")
+    fun getCategoryList(@Query("num")num:Int):Call<GetCategoryListDataResponse>
+
     // 북마크 추가
     @POST("/api/main/bookmark/add")
     fun postAddBookmark(@Header("token") token : String, @Body projData : PostProjData):Call<PostProjResponse>
@@ -37,4 +44,5 @@ interface NetworkService {
     // 북마크 제거
     @POST("/api/main/bookmark/cancel")
     fun postRemoveBookmark(@Header("token") token : String, @Body projData : PostProjData):Call<PostProjResponse>
+
 }
